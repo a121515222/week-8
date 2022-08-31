@@ -1,0 +1,554 @@
+---
+title: 首頁
+layout: ./app/layout.ejs
+engine: ejs
+current: index
+---
+<div class="bg-primary-gray pb-10 lg:pt-10 lg:pb-20">
+  <div class="container grid grid-cols-12 overflow-hidden">
+    <div
+      class="order-1 hidden lg:col-span-1 bg-black text-white  text-center vertical-rl lg:flex felx-col items-center gap-4">
+      <h2 class="text-5xl">Recommend</h2> <span class="text-xl">推薦系列</span>
+    </div>
+    <div class="order-2 -mx-3 col-span-12 xs:mx-0 lg:col-span-7 h-2/5screen lg:h-full">
+      <img class="object-cover w-full h-full" src="./assets/images/art01.jpg" alt="art picture">
+    </div>
+    <div class="bg-white order-3 border-b border-black col-span-12 lg:col-span-4 -mx-3 xs:mx-0 lg:h-full
+    px-3 py-8 flex flex-col justify-between lg:pt-20 lg:pb-6">
+      <div class="from-group">
+        <p class="text-lg">Kemus Wu</p>
+        <h2 class="font-bold text-2xl lg:text-5xl">瞳孔:流動的脈絡</h2>
+        <p>眼睛，總是吸引著我們的注意力，看、被看，也許眼睛裡有著從另一個世界看我們的世界。</p>
+      </div>
+      <a href="#" class="btn-more border border-black group self-end py-2 px-12">
+        <div class="triangle-br group-hover:triangle-br-black"></div>
+        more
+      </a>
+    </div>
+    <div class="bg-white order-5 border-b border-black col-span-12 lg:order-4 lg:col-span-3 -mx-3 xs:mx-0 
+    px-3 py-8 flex flex-col justify-between lg:pt-12 lg:pb-6 lg:h-full">
+      <div class="from-group">
+        <p class="text-lg">Joanne</p>
+        <h2 class="font-bold text-2xl lg:text-5xl">海洋波度</h2>
+        <p>海洋的奧秘向我們揭示了深不可測的一面，它的深度——反映了我們的恐懼、同時也吸引著我們。</p>
+      </div>
+      <a href="#" class="btn-more border border-black group self-end py-2 px-12">
+        <div class="triangle-br group-hover:triangle-br-black"></div>
+        more
+      </a>
+    </div>
+    <div class="order-4 -mx-3 col-span-12 border-b border-black xs:mx-0 lg:order-5 lg:col-span-3 h-2/5screen lg:h-full">
+      <img class="object-cover w-full h-full lg:h-[calc(100%-1px)]" src="./assets/images/art02.jpg" alt="art picture">
+    </div>
+    <div class="bg-white order-7 border-b border-black col-span-12 lg:order-6 lg:col-span-3 -mx-3 xs:mx-0 
+    px-3 py-8 flex flex-col justify-between lg:pt-12 lg:pb-6 lg:h-full">
+      <div class="from-group">
+        <p class="text-lg">Michael</p>
+        <h2 class="font-bold text-2xl lg:text-5xl">我家窗前的鳥</h2>
+        <p>家門前每天都有不同的小鳥，大多數的小鳥都有特殊能力，特殊能力是什麼我就不說了，希望大家能從作品感受到小鳥的快樂。</p>
+      </div>
+      <a href="#" class="btn-more border border-black group self-end py-2 px-12">
+        <div class="triangle-br group-hover:triangle-br-black"></div>
+        more
+      </a>
+    </div>
+    <div class="order-6 -mx-3 col-span-12 border-b border-black xs:mx-0 lg:order-7 lg:col-span-3 h-2/5screen lg:h-full">
+      <img class="object-cover w-full h-full lg:h-[calc(100%-1px)]" src="./assets/images/art21.jpg" alt="art picture">
+    </div>
+  </div>
+</div>
+<div class="bg-primary-gray">
+  <div class="container">
+    <div class="border-b border-black flex justify-between items-center">
+      <div class="from-group">
+        <h2 class="text-5xl inline-block">
+          Ranking
+        </h2>
+        <span class="text-xl font-bold pl-4 hidden xs:inline-block ">
+          市場排行
+        </span>
+      </div>
+      <a href="#" class="btn-more group self-end py-2 px-12">
+        <div class="triangle-br group-hover:triangle-br-black"></div>
+        more
+      </a>
+    </div>
+    <div class="grid grid-cols-12  space-y-6 lg:space-x-6 lg:space-y-0">
+      <div
+        class="col-span-12 border border-black lg:col-span-4 flex lg:flex-col relative group max-h-25 min-h-25 lg:max-h-fit lg:min-h-fit overflow-hidden">
+        <p
+          class="text-2xl font-bold flex items-center justify-center border-black bg-white z-20 w-[12.9%]
+        lg:text-32px lg:border-l-0 lg:border-r lg:border-b lg:h-16 lg:w-16 lg:absolute lg:top-0 lg:left-0 font-Paytone-one">
+          1</p>
+        <div class="relative w-[20.9%] lg:w-full before:absolute before:w-full before:h-full before:bg-black before:opacity-0 before:transition-all before:duration-500 before:hidden before:lg:block
+        group-hover:before:opacity-60 group-hover:before:transition-all group-hover:before:duration-500">
+          <img src="./assets/images/art04.jpg" alt="art picture"
+            class="w-full h-full lg:h-2/3screen object-top object-cover border-r border-black lg:border-b">
+          <a href="#" class="btn-more border opacity-0 hidden lg:block group-hover:opacity-100 border-black group self-end py-2 px-12 absolute bottom-0 right-0 
+          bg-white text-primary-red hover:bg-primary-red hover:text-white">
+            <div class="triangle-br group-hover:triangle-br-black"></div>
+            more
+          </a>
+          <a href="#" class="flex justify-center items-center text-white lg:hidden absolute w-full h-full text-lg opacity-0 bg-black group-hover:opacity-60
+          top-0 left-0">
+          </a>
+          <span
+            class="absolute lg:hidden -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 opacity-0 transition-all duration-500 text-white group-hover:opacity-100">more</span>
+        </div>
+        <div class="bg-white w-[66.2%] lg:w-full max-h-25 min-h-25">
+          <h3 class="text-lg font-bold px-2 py-4 lg:px-4">散步遇到的女人</h3>
+          <div class="flex justify-between items-center p-2 lg:px-4 border-t border-black">
+            <span>Zoe Jiang</span>
+            <div class="from-group">
+              <img src="./assets/images/ethereum.svg" alt="" class="inline-block w-6 h-6">
+              <span class="inline-block">300</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-span-12 border border-black lg:col-span-4 flex lg:flex-col relative group max-h-25 min-h-25 lg:max-h-fit lg:min-h-fit overflow-hidden">
+        <p
+          class="text-2xl font-bold flex items-center justify-center border-black bg-white z-20 w-[12.9%]
+        lg:text-32px lg:border-l-0 lg:border-r lg:border-b lg:h-16 lg:w-16 lg:absolute lg:top-0 lg:left-0 font-Paytone-one">
+          2</p>
+        <div class="relative w-[20.9%] lg:w-full before:absolute before:w-full before:h-full before:bg-black before:opacity-0 before:transition-all before:duration-500 before:hidden before:lg:block
+        group-hover:before:opacity-60 group-hover:before:transition-all group-hover:before:duration-500">
+          <img src="./assets/images/art05.jpg" alt="art picture"
+            class="w-full lg:h-2/3screen object-contain lg:object-cover border-r border-black lg:border-b">
+          <a href="#" class="btn-more border opacity-0 hidden lg:block group-hover:opacity-100 border-black group self-end py-2 px-12 absolute bottom-0 right-0 
+          bg-white text-primary-red hover:bg-primary-red hover:text-white">
+            <div class="triangle-br group-hover:triangle-br-black"></div>
+            more
+          </a>
+          <a href="#" class="flex justify-center items-center text-white lg:hidden absolute w-full h-full text-lg opacity-0 bg-black group-hover:opacity-60
+          top-0 left-0">
+          </a>
+          <span
+            class="absolute lg:hidden -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 opacity-0 transition-all duration-500 text-white group-hover:opacity-100">more</span>
+        </div>
+        <div class="bg-white w-[66.2%] lg:w-full max-h-25 min-h-25">
+          <h3 class="text-lg font-bold px-2 py-4 lg:px-4">爆炸頭的母親</h3>
+          <div class="flex justify-between items-center p-2 lg:px-4 border-t border-black">
+            <span>Yui</span>
+            <div class="from-group">
+              <img src="./assets/images/ethereum.svg" alt="" class="inline-block w-6 h-6">
+              <span class="inline-block">300</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-span-12 border border-black lg:col-span-4 flex lg:flex-col relative group max-h-25 min-h-25 lg:max-h-fit lg:min-h-fit overflow-hidden">
+        <p
+          class="text-2xl font-bold flex items-center justify-center border-black bg-white z-20 w-[12.9%]
+        lg:text-32px lg:border-l-0 lg:border-r lg:border-b lg:h-16 lg:w-16 lg:absolute lg:top-0 lg:left-0 font-Paytone-one">
+          3</p>
+        <div class="relative w-[20.9%] lg:w-full before:absolute before:w-full before:h-full before:bg-black before:opacity-0 before:transition-all before:duration-500 before:hidden before:lg:block
+        group-hover:before:opacity-60 group-hover:before:transition-all group-hover:before:duration-500">
+          <img src="./assets/images/art06.jpg" alt="art picture"
+            class="w-full lg:h-2/3screen object-contain lg:object-cover border-r border-black lg:border-b">
+          <a href="#" class="btn-more border opacity-0 hidden lg:block group-hover:opacity-100 border-black group self-end py-2 px-12 absolute bottom-0 right-0 
+          bg-white text-primary-red hover:bg-primary-red hover:text-white">
+            <div class="triangle-br group-hover:triangle-br-black"></div>
+            more
+          </a>
+          <a href="#" class="flex justify-center items-center text-white lg:hidden absolute w-full h-full text-lg opacity-0 bg-black group-hover:opacity-60
+          top-0 left-0">
+          </a>
+          <span
+            class="absolute lg:hidden -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 opacity-0 transition-all duration-500 text-white group-hover:opacity-100">more</span>
+        </div>
+        <div class="bg-white w-[66.2%] lg:w-full max-h-25 min-h-25">
+          <h3 class="text-lg font-bold px-2 py-4 lg:px-4">夏天的時候</h3>
+          <div class="flex justify-between items-center p-2 lg:px-4 border-t border-black">
+            <span>Bug Lin</span>
+            <div class="from-group">
+              <img src="./assets/images/ethereum.svg" alt="" class="inline-block w-6 h-6">
+              <span class="inline-block">300</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid-cols-12  space-y-6 lg:space-x-6 lg:space-y-0 pt-6">
+      <div class="col-span-12 border border-black lg:col-span-4 flex group max-h-25 min-h-25">
+        <p class="text-2xl font-bold flex items-center justify-center bg-white w-[12.9%]
+         font-Paytone-one">4</p>
+        <div class="relative group w-[20.9%]">
+          <img src="./assets/images/art13.jpg" alt="art picture"
+            class="w-full h-full object-top object-cover border-r border-black">
+          <a href="#" class="flex justify-center items-center text-white absolute w-full h-full text-lg opacity-0 bg-black group-hover:opacity-60
+          top-0 left-0">
+          </a>
+          <span
+            class="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 opacity-0 transition-all duration-500 text-white group-hover:opacity-100">more</span>
+        </div>
+        <div class="bg-white w-[66.2%]">
+          <h3 class="text-lg font-bold px-2 py-4 lg:px-4">追求者送我的花</h3>
+          <div class="flex justify-between items-center p-2 lg:px-4 border-t border-black">
+            <span>Michael</span>
+            <div class="from-group">
+              <img src="./assets/images/ethereum.svg" alt="" class="inline-block w-6 h-6">
+              <span class="inline-block">300</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-span-12 border border-black lg:col-span-4 flex group max-h-25 min-h-25">
+        <p class="text-2xl font-bold flex items-center justify-center bg-white w-[12.9%]
+         font-Paytone-one">5</p>
+        <div class="relative group w-[20.9%]">
+          <img src="./assets/images/art07.jpg" alt="art picture"
+            class="w-full h-full object-top object-cover border-r border-black">
+          <a href="#" class="flex justify-center items-center text-white absolute w-full h-full text-lg opacity-0 bg-black group-hover:opacity-60
+          top-0 left-0">
+          </a>
+          <span
+            class="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 opacity-0 transition-all duration-500 text-white group-hover:opacity-100">more</span>
+        </div>
+        <div class="bg-white w-[66.2%]">
+          <h3 class="text-lg font-bold px-2 py-4 lg:px-4">今天釣到的魚</h3>
+          <div class="flex justify-between items-center p-2 lg:px-4 border-t border-black">
+            <span>Wei JJ</span>
+            <div class="from-group">
+              <img src="./assets/images/ethereum.svg" alt="" class="inline-block w-6 h-6">
+              <span class="inline-block">300</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-span-12 border border-black lg:col-span-4 flex group max-h-25 min-h-25">
+        <p class="text-2xl font-bold flex items-center justify-center bg-white w-[12.9%]
+         font-Paytone-one">6</p>
+        <div class="relative group w-[20.9%]">
+          <img src="./assets/images/art08.jpg" alt="art picture"
+            class="w-full h-full object-top object-cover border-r border-black">
+          <a href="#" class="flex justify-center items-center text-white absolute w-full h-full text-lg opacity-0 bg-black group-hover:opacity-60
+          top-0 left-0">
+          </a>
+          <span
+            class="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 opacity-0 transition-all duration-500 text-white group-hover:opacity-100">more</span>
+        </div>
+        <div class="bg-white w-[66.2%]">
+          <h3 class="text-lg font-bold px-2 py-4 lg:px-4">人生中的貓咪們</h3>
+          <div class="flex justify-between items-center p-2 lg:px-4 border-t border-black">
+            <span>Even Lai</span>
+            <div class="from-group">
+              <img src="./assets/images/ethereum.svg" alt="" class="inline-block w-6 h-6">
+              <span class="inline-block">300</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="bg-primary-gray">
+  <div class="container">
+    <div class="border-b border-black flex justify-between items-center mb-6 lg:mb-12">
+      <div class="from-group">
+        <h2 class="text-5xl inline-block">
+          Artist
+        </h2>
+        <span class="text-xl font-bold pl-4 hidden xs:inline-block ">
+          熱門藝術家
+        </span>
+      </div>
+      <a href="#" class="btn-more group self-end py-2 px-12">
+        <div class="triangle-br group-hover:triangle-br-black"></div>
+        more
+      </a>
+    </div>
+    <div class="swiper pb-18 lg:pb-34">
+      <div class="swiper-wrapper items-center">
+        <div class="swiper-slide">
+          <div class="relative w-full h-auto lg:h-full flex flex-col">
+            <div class="imgPosition relative">
+              <img src="./assets/images/artist01.jpg" alt="artist picture" class="w-full h-full object-cover">
+              <a href="#"
+                class="btn-more absolute lg:block bg-white border  border-black group self-end py-2 px-12 right-2 bottom-2 lg:right-6 lg:bottom-6 elSwitch">
+                <div class="triangle-br group-hover:triangle-br-black"></div>
+                more
+              </a>
+            </div>
+            <h3 class="text-32px lg:text-8xl text-white absolute top-6 text-left left-6 w-[200px] elSwitch">Antony Wu
+            </h3>
+            <div
+              class="bg-white w-full text-left p-6 lg:absolute lg:bottom-6 lg:left-6 lg:w-[48.2%] lg:bg-opacity-80 elSwitch">
+              <p>​喜愛大自然，創作題材常見大山、大水、花草與樹木。</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="relative w-full h-auto lg:h-full flex flex-col">
+            <div class="imgPosition relative">
+              <img src="./assets/images/artist02.jpg" alt="artist picture" class="w-full h-full object-cover">
+              <a href="#"
+                class="btn-more absolute lg:block bg-white border  border-black group self-end py-2 px-12 right-2 bottom-2 lg:right-6 lg:bottom-6 elSwitch">
+                <div class="triangle-br group-hover:triangle-br-black"></div>
+                more
+              </a>
+            </div>
+            <h3 class="text-32px lg:text-8xl text-white absolute top-6 text-left left-6 w-[200px] elSwitch">Antony Wu
+            </h3>
+            <div
+              class="bg-white w-full text-left p-6 lg:absolute lg:bottom-6 lg:left-6 lg:w-[48.2%] lg:bg-opacity-80 elSwitch">
+              <p>​喜愛大自然，創作題材常見大山、大水、花草與樹木。</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="relative w-full h-auto lg:h-full flex flex-col">
+            <div class="imgPosition relative">
+              <img src="./assets/images/artist04.jpg" alt="artist picture" class="w-full h-full object-cover">
+              <a href="#"
+                class="btn-more absolute lg:block bg-white border  border-black group self-end py-2 px-12 right-2 bottom-2 lg:right-6 lg:bottom-6 elSwitch">
+                <div class="triangle-br group-hover:triangle-br-black"></div>
+                more
+              </a>
+            </div>
+            <h3 class="text-32px lg:text-8xl text-white absolute top-6 text-left left-6 w-[200px] elSwitch">Antony Wu
+            </h3>
+            <div
+              class="bg-white w-full text-left p-6 lg:absolute lg:bottom-6 lg:left-6 lg:w-[48.2%] lg:bg-opacity-80 elSwitch">
+              <p>​喜愛大自然，創作題材常見大山、大水、花草與樹木。</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="relative w-full h-auto lg:h-full flex flex-col">
+            <div class="imgPosition relative">
+              <img src="./assets/images/artist05.jpg" alt="artist picture" class="w-full h-full object-cover">
+              <a href="#"
+                class="btn-more absolute lg:block bg-white border  border-black group self-end py-2 px-12 right-2 bottom-2 lg:right-6 lg:bottom-6 elSwitch">
+                <div class="triangle-br group-hover:triangle-br-black"></div>
+                more
+              </a>
+            </div>
+            <h3 class="text-32px lg:text-8xl text-white absolute top-6 text-left left-6 w-[200px] elSwitch">Antony Wu
+            </h3>
+            <div
+              class="bg-white w-full text-left p-6 lg:absolute lg:bottom-6 lg:left-6 lg:w-[48.2%] lg:bg-opacity-80 elSwitch">
+              <p>​喜愛大自然，創作題材常見大山、大水、花草與樹木。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination !bottom-10 lg:!bottom-20"></div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="bg-primary-gray">
+  <div class="container">
+    <div class="border-b border-black flex justify-between items-center mb-6 lg:mb-12">
+      <div class="from-group">
+        <h2 class="text-5xl inline-block">
+          Artwork
+        </h2>
+        <span class="text-xl font-bold pl-4 hidden xs:inline-block ">
+          最新藝術品
+        </span>
+      </div>
+      <a href="#" class="btn-more group self-end py-2 px-12">
+        <div class="triangle-br group-hover:triangle-br-black"></div>
+        more
+      </a>
+    </div>
+    <div class="MasonryGrid">
+      <div class="grid-sizer"></div>
+      <div class="gutter-sizer"></div>
+      <div class="grid-item mb-3">
+        <div class="border-8 border-white relative before:absolute before:bg-black before:w-full before:h-full before:top-0 before:left-0
+        before:opacity-0 before:transition-all before:duration-500 hover:before:opacity-70 group">
+          <img src="./assets/images/art09.jpg" alt="art picture" class="">
+          <p class="absolute text-white border border-white h-[calc(100%-32px)] w-[calc(100%-32px)] left-4 top-4 p-4
+        opacity-0 transition-all duration-500 group-hover:opacity-100">
+            唯一想擁有的人，唯一不可擁有的<br><br>
+            <img src="./assets/images/ethereum.svg" alt="" class="inline-block w-6 h-6">
+            <span class="inline-block">300</span>
+          </p>
+          <a href="#"
+            class="btn-more absolute opacity-0 group-hover:opacity-100 bg-white border border-black group self-end py-2 px-12 right-2 bottom-2 lg:right-8 lg:bottom-8">
+            <div class="triangle-br group-hover:triangle-br-black"></div>
+            more
+          </a>
+        </div>
+        <h3 class="text-sm border-b font-bold lg:border-black pt-2 pb-6 lg:py-4">區塊戀-他的私生活</h3>
+      </div>
+      <div class="grid-item mb-3">
+        <div class="border-8 border-white relative before:absolute before:bg-black before:w-full before:h-full before:top-0 before:left-0
+        before:opacity-0 before:transition-all before:duration-500 hover:before:opacity-70 group">
+          <img src="./assets/images/art10.jpg" alt="art picture" class="">
+          <p class="absolute text-white border border-white h-[calc(100%-32px)] w-[calc(100%-32px)] left-4 top-4 p-4
+        opacity-0 transition-all duration-500 group-hover:opacity-100">
+            唯一想擁有的人，唯一不可擁有的<br><br>
+            <img src="./assets/images/ethereum.svg" alt="" class="inline-block w-6 h-6">
+            <span class="inline-block">300</span>
+          </p>
+          <a href="#"
+            class="btn-more absolute opacity-0 group-hover:opacity-100 bg-white border border-black group self-end py-2 px-12 right-2 bottom-2 lg:right-8 lg:bottom-8">
+            <div class="triangle-br group-hover:triangle-br-black"></div>
+            more
+          </a>
+        </div>
+        <h3 class="text-sm border-b font-bold lg:border-black pt-2 pb-6 lg:py-4">夏娃的醜聞</h3>
+      </div>
+      <div class="grid-item mb-3">
+        <div class="border-8 border-white relative before:absolute before:bg-black before:w-full before:h-full before:top-0 before:left-0
+        before:opacity-0 before:transition-all before:duration-500 hover:before:opacity-70 group">
+          <img src="./assets/images/art02.jpg" alt="art picture" class="">
+          <p class="absolute text-white border border-white h-[calc(100%-32px)] w-[calc(100%-32px)] left-4 top-4 p-4
+        opacity-0 transition-all duration-500 group-hover:opacity-100">
+            唯一想擁有的人，唯一不可擁有的<br><br>
+            <img src="./assets/images/ethereum.svg" alt="" class="inline-block w-6 h-6">
+            <span class="inline-block">300</span>
+          </p>
+          <a href="#"
+            class="btn-more absolute opacity-0 group-hover:opacity-100 bg-white border border-black group self-end py-2 px-12 right-2 bottom-2 lg:right-8 lg:bottom-8">
+            <div class="triangle-br group-hover:triangle-br-black"></div>
+            more
+          </a>
+        </div>
+        <h3 class="text-sm border-b font-bold lg:border-black pt-2 pb-6 lg:py-4">藍色啤酒海</h3>
+      </div>
+      <div class="grid-item mb-3">
+        <div class="border-8 border-white relative before:absolute before:bg-black before:w-full before:h-full before:top-0 before:left-0
+        before:opacity-0 before:transition-all before:duration-500 hover:before:opacity-70 group">
+          <img src="./assets/images/art11.jpg" alt="art picture" class="">
+          <p class="absolute text-white border border-white h-[calc(100%-32px)] w-[calc(100%-32px)] left-4 top-4 p-4
+        opacity-0 transition-all duration-500 group-hover:opacity-100">
+            唯一想擁有的人，唯一不可擁有的<br><br>
+            <img src="./assets/images/ethereum.svg" alt="" class="inline-block w-6 h-6">
+            <span class="inline-block">300</span>
+          </p>
+          <a href="#"
+            class="btn-more absolute opacity-0 group-hover:opacity-100 bg-white border border-black group self-end py-2 px-12 right-2 bottom-2 lg:right-8 lg:bottom-8">
+            <div class="triangle-br group-hover:triangle-br-black"></div>
+            more
+          </a>
+        </div>
+        <h3 class="text-sm border-b font-bold lg:border-black pt-2 pb-6 lg:py-4">沒有人愛我</h3>
+      </div>
+      <div class="grid-item mb-3">
+        <div class="border-8 border-white relative before:absolute before:bg-black before:w-full before:h-full before:top-0 before:left-0
+        before:opacity-0 before:transition-all before:duration-500 hover:before:opacity-70 group">
+          <img src="./assets/images/art12.jpg" alt="art picture" class="">
+          <p class="absolute text-white border border-white h-[calc(100%-32px)] w-[calc(100%-32px)] left-4 top-4 p-4
+        opacity-0 transition-all duration-500 group-hover:opacity-100">
+            唯一想擁有的人，唯一不可擁有的<br><br>
+            <img src="./assets/images/ethereum.svg" alt="" class="inline-block w-6 h-6">
+            <span class="inline-block">300</span>
+          </p>
+          <a href="#"
+            class="btn-more absolute opacity-0 group-hover:opacity-100 bg-white border border-black group self-end py-2 px-12 right-2 bottom-2 lg:right-8 lg:bottom-8">
+            <div class="triangle-br group-hover:triangle-br-black"></div>
+            more
+          </a>
+        </div>
+        <h3 class="text-sm border-b font-bold lg:border-black pt-2 pb-6 lg:py-4">不哭不哭眼淚是珍珠</h3>
+      </div>
+      <div class="grid-item">
+        <div class="border-8 border-white relative before:absolute before:bg-black before:w-full before:h-full before:top-0 before:left-0
+        before:opacity-0 before:transition-all before:duration-500 hover:before:opacity-70 group">
+          <img src="./assets/images/art03.jpg" alt="art picture" class="">
+          <p class="absolute text-white border border-white h-[calc(100%-32px)] w-[calc(100%-32px)] left-4 top-4 p-4
+        opacity-0 transition-all duration-500 group-hover:opacity-100">
+            唯一想擁有的人，唯一不可擁有的<br><br>
+            <img src="./assets/images/ethereum.svg" alt="" class="inline-block w-6 h-6">
+            <span class="inline-block">300</span>
+          </p>
+          <a href="#"
+            class="btn-more absolute opacity-0 group-hover:opacity-100 bg-white border border-black group self-end py-2 px-12 right-2 bottom-2 lg:right-8 lg:bottom-8">
+            <div class="triangle-br group-hover:triangle-br-black"></div>
+            more
+          </a>
+        </div>
+        <h3 class="text-sm border-b font-bold lg:border-black pt-2 pb-6 lg:py-4">十分鐘就到</h3>
+      </div>
+      <div class="grid-item mb-3">
+        <div class="border-8 border-white relative before:absolute before:bg-black before:w-full before:h-full before:top-0 before:left-0
+        before:opacity-0 before:transition-all before:duration-500 hover:before:opacity-70 group">
+          <img src="./assets/images/art04.jpg" alt="art picture" class="">
+          <p class="absolute text-white border border-white h-[calc(100%-32px)] w-[calc(100%-32px)] left-4 top-4 p-4
+        opacity-0 transition-all duration-500 group-hover:opacity-100">
+            唯一想擁有的人，唯一不可擁有的<br><br>
+            <img src="./assets/images/ethereum.svg" alt="" class="inline-block w-6 h-6">
+            <span class="inline-block">300</span>
+          </p>
+          <a href="#"
+            class="btn-more absolute opacity-0 group-hover:opacity-100 bg-white border border-black group self-end py-2 px-12 right-2 bottom-2 lg:right-8 lg:bottom-8">
+            <div class="triangle-br group-hover:triangle-br-black"></div>
+            more
+          </a>
+        </div>
+        <h3 class="text-sm border-b font-bold lg:border-black pt-2 pb-6 lg:py-4">我這樣有美嗎</h3>
+      </div>
+      <div class="grid-item mb-3">
+        <div class="border-8 border-white relative before:absolute before:bg-black before:w-full before:h-full before:top-0 before:left-0
+        before:opacity-0 before:transition-all before:duration-500 hover:before:opacity-70 group">
+          <img src="./assets/images/art27.jpg" alt="art picture" class="">
+          <p class="absolute text-white border border-white h-[calc(100%-32px)] w-[calc(100%-32px)] left-4 top-4 p-4
+        opacity-0 transition-all duration-500 group-hover:opacity-100">
+            唯一想擁有的人，唯一不可擁有的<br><br>
+            <img src="./assets/images/ethereum.svg" alt="" class="inline-block w-6 h-6">
+            <span class="inline-block">300</span>
+          </p>
+          <a href="#"
+            class="btn-more absolute opacity-0 group-hover:opacity-100 bg-white border border-black group self-end py-2 px-12 right-2 bottom-2 lg:right-8 lg:bottom-8">
+            <div class="triangle-br group-hover:triangle-br-black"></div>
+            more
+          </a>
+        </div>
+        <h3 class="text-sm border-b font-bold lg:border-black pt-2 pb-6 lg:py-4">我真的受傷了</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-primary-gray">
+  <div class="container text-center">
+    <h2 class="text-32px pb-4">Join Us</h2>
+    <p class="text-xl pb-8 lg:pb-10">創建並出售你的藝術品</p>
+  </div>
+</div>
+<div class="bg-primary-gray border-y-4 border-black relative before:absolute before:bg-black before:w-full before:h-0.5 before:top-0.5
+after:absolute after:bg-black after:w-full after:h-0.5 after:bottom-0.5">
+  <div class="container grid grid-cols-12 gap-6">
+    <div class="col-span-12 md:col-span-6 lg:col-span-3 flex flex-col items-center py-12 lg:py-22">
+      <span class="material-symbols-outlined p-4 text-[60px] text-primary-red">
+        wallet
+      </span>
+      <h2 class="font-bold text-lg pb-6">設置你的錢包</h2>
+      <p>設置好您選擇的錢包後 點擊右上角的錢包圖標進行連接</p>
+    </div>
+    <div class="col-span-12 md:col-span-6 lg:col-span-3 flex flex-col items-center py-12 lg:py-22">
+        <span class="material-symbols-outlined p-4 text-[60px] text-primary-red">
+          edit
+        </span>
+        <h2 class="font-bold text-lg pb-6">創建您的主頁</h2>
+        <p>註冊成為會員，編輯您的資料 讓大家了解你</p>
+    </div>
+    <div class="col-span-12 md:col-span-6 lg:col-span-3 flex flex-col items-center py-12 lg:py-22">
+        <span class="material-symbols-outlined p-4 text-[60px] text-primary-red">
+          imagesmode
+          </span>
+        <h2 class="font-bold text-lg pb-6">添加你的 NFT</h2>
+        <p>上傳你的作品 添加標題和描述</p>
+    </div>
+    <div class="col-span-12 md:col-span-6 lg:col-span-3 flex flex-col items-center py-12 lg:py-22">
+        <span class="material-symbols-outlined p-4 text-[60px] text-primary-red">
+          sell
+          </span>
+        <h2 class="font-bold text-lg pb-6">列出它們出售</h2>
+        <p>選擇出售 NFT 的方式 並設定價格，等待有緣人</p>
+    </div>
+  </div>
+</div>
