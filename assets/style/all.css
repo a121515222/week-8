@@ -1799,6 +1799,9 @@ input:checked + .toggle-bg {
 .pt-6 {
   padding-top: 1.5rem;
 }
+.pt-12 {
+  padding-top: 3rem;
+}
 .pb-18 {
   padding-bottom: 72px;
 }
@@ -1825,6 +1828,9 @@ input:checked + .toggle-bg {
 }
 .font-Paytone-one {
   font-family: "Paytone One";
+}
+.font-sans {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 .font-mono {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
