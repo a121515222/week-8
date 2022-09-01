@@ -1,12 +1,29 @@
 "use strict";
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 var logo = document.querySelector('.js-logo');
 var search = document.querySelector('.js-search');
 var searchButton = document.querySelector('.js-searchButton');
 var searchButtonSpan = document.querySelector('.js-searchButton span');
 var hamburger = document.querySelector('.hamburger');
 var mobileNav = document.querySelector('.js-mobileNav');
-var mobileNavButton = document.querySelector('.js-mobileNavButton'); // mobil搜尋打開與隱藏logo與hamburger
+var mobileNavButton = document.querySelector('.js-mobileNavButton');
+
+var NavTabClicks = _toConsumableArray(document.querySelectorAll('.js-NavTabClick'));
+
+var TabSections = _toConsumableArray(document.querySelectorAll('.js-Section')); // mobil搜尋打開與隱藏logo與hamburger
+
 
 function openSearch() {
   mobileNav.classList.toggle('w-full');
@@ -24,7 +41,40 @@ function hamburgerActive() {
 }
 
 searchButton.addEventListener('click', openSearch);
-hamburger.addEventListener('click', hamburgerActive); // swiper
+hamburger.addEventListener('click', hamburgerActive); // artist tabNav切換
+
+function buttonStyleChange(event, el) {
+  var index = null;
+
+  if (event) {
+    NavTabClicks.forEach(function (item) {
+      item.classList.remove('buttonActive');
+    });
+    el.classList.add('buttonActive');
+    index = el.dataset.index;
+  }
+
+  return index;
+}
+
+function pageSwitch(parIndex) {
+  TabSections.forEach(function (page) {
+    page.classList.add('hidden');
+    console.log('par', parIndex);
+
+    if (page.dataset.index === parIndex) {
+      page.classList.remove('hidden');
+    }
+  });
+}
+
+NavTabClicks.forEach(function (button) {
+  button.addEventListener('click', function (e) {
+    var index = buttonStyleChange(e, button);
+    console.log('index', index);
+    pageSwitch(index);
+  });
+}); // swiper
 
 var swiperEl = document.querySelector('.swiper');
 
@@ -38,11 +88,6 @@ if (swiperEl) {
     slidesPerView: 1,
     loop: true,
     breakpoints: {
-      // when window width is >= 320px
-      320: {},
-      // when window width is >= 480px
-      480: {},
-      // when window width is >= 640px
       760: {
         centeredSlides: false,
         slidesPerView: 1

@@ -44,12 +44,12 @@
         </a>
       </li>
     </ul>
-    <ul class="js-mobileNav flex items-center justify-between lg:hidden">
+    <ul class="js-mobileNav flex items-center justify-between lg:hidden overflow-hidden">
       <li class="js-search w-0 transition-all items-center flex justify-between overflow-hidden">
-        <span class="material-symbols-outlined inline-block absolute right-[-100%]">
+        <span class="material-symbols-outlined absolute opacity-0">
           chevron_left
           </span>
-        <input class="bg-primary-gray w-[77%] h-8 border-b border-t-0 border-l-0 border-r-0 border-primary-gray  ml-2 inline-block
+        <input class="bg-primary-gray w-[77%] h-8 border-b border-t-0 border-l-0 border-r-0 border-primary-gray  lg:mg-2 inline-block
         focus:ring-0 focus:ring-primary-gray focus:border-black focus:border-b focus:border-t-0 focus:border-l-0 focus:border-r-0" 
         type="text" placeholder="搜尋作品名稱、藝術家名稱">
       </li>
@@ -74,11 +74,10 @@
           hover:after:transtion hover:after:duration-500 hover:after:bg-primary-red
           ">
       </div>
-      
       </li>
     </ul>
     </div>
-    <ul class="js-mobileNavButton absolute transition-all duration-500 w-full left-0 top-[-300%] bg-white text-center border border-black px-3">
+    <ul class="js-mobileNavButton absolute transition-all duration-500 w-full left-0 top-[-350%] bg-white text-center border border-black px-3">
       <li class="border-b border-black py-6"><a class=" font-bold  text-lg" href="#">探索</a></li>
       <li class="py-6"><a class=" font-bold text-lg" href="#">市值</a></li>
       <li class=""><a class="w-full block py-6 bg-primary-red border border-black text-white text-lg hover:bg-white duration-500" href="#">錢包連結</a></li>
@@ -338,7 +337,7 @@
           熱門藝術家
         </span>
       </div>
-      <a href="#" class="btn-more group self-end py-2 px-12">
+      <a href="artist.html" class="btn-more group self-end py-2 px-12">
         <div class="triangle-br group-hover:triangle-br-black"></div>
         more
       </a>
