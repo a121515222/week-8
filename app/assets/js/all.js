@@ -5,6 +5,8 @@ const searchButtonSpan = document.querySelector('.js-searchButton span')
 const hamburger = document.querySelector('.hamburger')
 const mobileNav = document.querySelector('.js-mobileNav')
 const mobileNavButton =document.querySelector('.js-mobileNavButton')
+const NavTabClicks = [...document.querySelectorAll('.js-NavTabClick')]
+const TabSections = [...document.querySelectorAll('.js-Section')]
 // mobil搜尋打開與隱藏logo與hamburger
 function openSearch(){
   mobileNav.classList.toggle('w-full')
@@ -22,6 +24,39 @@ function hamburgerActive(){
 searchButton.addEventListener('click',openSearch)
 hamburger.addEventListener('click',hamburgerActive)
 
+// artist tabNav切換
+
+function buttonStyleChange(event,el){
+  let index = null
+  if(event){
+    NavTabClicks.forEach((item)=>{
+      item.classList.remove('buttonActive')
+    })
+    el.classList.add('buttonActive')
+    index = el.dataset.index
+  }
+  return index
+}
+function pageSwitch(parIndex){
+  TabSections.forEach((page)=>{
+    page.classList.add('hidden')
+    console.log('par',parIndex)
+    if(page.dataset.index === parIndex){
+      page.classList.remove('hidden')
+    } 
+  })
+}
+
+
+NavTabClicks.forEach((button)=>{
+  button.addEventListener('click', function(e){
+    const index = buttonStyleChange(e, button)
+    console.log('index', index)
+    pageSwitch(index)
+  })
+})
+
+
 
 // swiper
 const swiperEl = document.querySelector('.swiper');
@@ -36,11 +71,6 @@ if(swiperEl){
     loop: true,
     
     breakpoints: {
-      // when window width is >= 320px
-      320: {},
-      // when window width is >= 480px
-      480: {},
-      // when window width is >= 640px
       760: {
         centeredSlides:false,
         slidesPerView: 1,
