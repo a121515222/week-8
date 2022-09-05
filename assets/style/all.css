@@ -1921,6 +1921,9 @@ input:checked + .toggle-bg {
 .pb-18 {
   padding-bottom: 72px;
 }
+.pb-3 {
+  padding-bottom: 0.75rem;
+}
 .pb-8 {
   padding-bottom: 2rem;
 }
