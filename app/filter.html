@@ -1,0 +1,379 @@
+---
+title: 篩選頁
+layout: ./app/layout.ejs
+engine: ejs
+current: filter
+---
+<div class="!h-0 !left-0">
+  <!-- 用來給tailwind編譯用class -->
+
+</div>
+<div class="bg-primary-gray pt-12 pb-10 lg:pb-20 border-b-2 border-black relative after:absolute after:bg-black after:w-full after:h-[1px] after:left-0 after:bottom-0.5">
+  <div class="container">
+    <button type="button" class="js-showFilterOpener fixed bottom-0 -translate-x-1/2 left-1/2 bg-black text-white py-2 px-12 lg:hidden z-30 hover:bg-white hover:text-black">
+      篩選條件 <span class="js-filterNum"></span>
+    </button>
+    <div class="grid grid-cols-12 gap-6 relative overflow-hidden">
+      <div class="js-filter transition-all duration-500 col-span-12 absolute top-0 left-[-300%] lg:static lg:left-0 lg:col-span-3 bg-white border border-black z-50">
+        <ul class="w-full ">
+          <li class="w-full lg:hidden relative text-lg text-center cursor-pointer pt-4">
+            篩選條件
+            <span class="js-showFilterCloser material-symbols-outlined absolute right-3 top-4">
+              close
+              </span>
+          </li>
+          <li class="w-full p-6 border-b border-gray-300 ">
+            <div class="flex justify-between items-center">
+              <p class="font-bold">網路</p>
+              <span class="js-filterClick material-symbols-outlined -mr-1 cursor-pointer hover:text-primary-red transition-all duration-500">
+                expand_less
+              </span>
+            </div>
+            <div class="js-typeNet h-full w-full overflow-hidden">
+              <div class="js flex justify-between py-2">
+                <label class="" for="EHT">以太坊</label>
+                <input class="border-black border text-black
+                focus:ring-white" id="EHT" type="checkbox" value="以太坊">
+              </div>
+              <div class="flex justify-between">
+                <label class="" for="BNB-smart-chain"><span class="font-sans">BNB</span>智能鏈</label>
+                <input class="border-black border text-black
+                focus:ring-white" id="BNB-smart-chain" type="checkbox" value="智能鏈">
+              </div>
+            </div>
+          </li>
+          <li class="w-full p-6 border-b border-gray-300">
+            <div class="flex justify-between items-center">
+              <p class="font-bold pb-4">狀態</p>
+              <span class="js-filterClick material-symbols-outlined -mr-1 cursor-pointer hover:text-primary-red transition-all duration-500">
+                expand_less
+              </span>
+            </div>
+            <div class="js-typeStatus h-full w-full overflow-hidden">
+              <div class="flex justify-between py-2">
+                <label class="" for="demo">僅展示</label>
+                <input class="border-black border text-black
+                focus:ring-white" id="demo" type="checkbox" value="僅展示">
+              </div>
+              <div class="flex justify-between">
+                <label class="" for="auction">拍賣中</label>
+                <input class="border-black border text-black
+                focus:ring-white" id="auction" type="checkbox" value="拍賣中">
+              </div>
+            </div>
+          </li>
+          <li class="w-full p-6 border-b border-gray-300">
+            <div class="flex justify-between items-center">
+              <p class="font-bold pb-4">價格</p>
+              <span class="js-filterClick material-symbols-outlined -mr-1 cursor-pointer hover:text-primary-red transition-all duration-500">
+                expand_less
+              </span>
+            </div>
+            <div class="h-full overflow-hidden">
+              <select class="js-typePrice w-20 inline-block mr-1 focus:ring-white focus:border-black" name="type of price" id="type of price">
+                <option class="hover:bg-black hover:text-white" value="ETH">ETH</option>
+                <option class="hover:bg-black hover:text-white" value="BIT">BIT</option>
+              </select>
+              <input class="js-minPrice w-16 inline-block focus:ring-white focus:border-black" type="text">
+              <span class="inline-block mx-1">-</span>
+              <input class="js-maxPrice w-16 inline-block focus:ring-white focus:border-black" type="text">
+            </div>
+          </li>
+          <li class="w-full px-6 pt-6 text-gray-400">屬性</li>
+          <li class="w-full px-6 pt-6">
+            <div class="flex justify-between items-center">
+              <p class="font-bold pb-4">品種</p>
+              <span class="js-filterClick material-symbols-outlined -mr-1 cursor-pointer hover:text-primary-red transition-all duration-500">
+                expand_less
+              </span>
+            </div>
+            <div class="h-full w-full overflow-hidden js-typeBird">
+              <div class="flex justify-between py-2">
+                <label class="" for="Acridotheres cristatellus">八哥</label>
+                <input class=" border-black border text-black
+                focus:ring-white" id="Acridotheres cristatellus" type="checkbox" value="八哥">
+              </div>
+              <div class="flex justify-between py-2">
+                <label class="" for="Melopsittacus undulatus">虎皮鸚鵡</label>
+                <input class="border-black border text-black
+                focus:ring-white" id="Melopsittacus undulatus" type="checkbox" value="虎皮鸚鵡">
+              </div>
+              <div class="flex justify-between py-2">
+                <label class="" for="Bombycillagarrulus">太平鳥</label>
+                <input class="border-black border text-black
+                focus:ring-white" id="Bombycillagarrulus" type="checkbox" value="太平鳥">
+              </div>
+              <div class="flex justify-between">
+                <label class="" for="Garrulax canorus">畫眉鳥</label>
+                <input class="border-black border text-black
+                focus:ring-white" id="Garrulax canorus" type="checkbox" value="畫眉鳥">
+              </div>
+            </div>
+          </li>
+          <li class="w-full border-b border-gray-300">
+            <a class="lg:hidden text-center w-full block py-3 bg-primary-red border-y border-black text-white text-lg hover:bg-white duration-500" href="#">確定</a>
+          </li>
+          <li class="w-full p-6 border-b border-gray-300">
+            <div class="flex justify-between items-center">
+              <p class="font-bold pb-4">是否有花草</p>
+              <span class="js-filterClick material-symbols-outlined -mr-1 cursor-pointer hover:text-primary-red transition-all duration-500">
+                expand_less
+              </span>
+            </div>
+            <div class="h-full w-full overflow-hidden js-flower">
+              <div class="flex justify-between py-2">
+                <label class="" for="flower">有</label>
+                <input class=" border-black border text-black
+                focus:ring-white" id="flower" type="radio" name="flower" value="有">
+              </div>
+              <div class="flex justify-between">
+                <label class="" for="noflower">沒有</label>
+                <input class="border-black border text-black
+                focus:ring-white" id="noflower" type="radio" name="flower" value="沒有">
+              </div>
+            </div>
+          </li>
+          <li class="w-full p-6 border-b border-gray-300">
+            <div class="flex justify-between items-center">
+              <p class="font-bold pb-4">鳥的顏色</p>
+              <span class="js-filterClick material-symbols-outlined -mr-1 cursor-pointer hover:text-primary-red transition-all duration-500">
+                expand_less
+              </span>
+            </div>
+            <div class="h-full w-full overflow-hidden js-birdColor">
+              <div class="flex justify-between py-2">
+                <label class="" for="red">紅</label>
+                <input class=" border-black border text-black
+                focus:ring-white" id="red" type="checkbox" value="紅">
+              </div>
+              <div class="flex justify-between py-2">
+                <label class="" for="orange">橙</label>
+                <input class=" border-black border text-black
+                focus:ring-white" id="orange" type="checkbox" value="橙">
+              </div>
+              <div class="flex justify-between py-2">
+                <label class="" for="yellow">黃</label>
+                <input class=" border-black border text-black
+                focus:ring-white" id="yellow" type="checkbox" value="黃">
+              </div>
+              <div class="flex justify-between py-2">
+                <label class="" for="green">綠</label>
+                <input class=" border-black border text-black
+                focus:ring-white" id="green" type="checkbox" value="綠">
+              </div>
+              <div class="flex justify-between py-2">
+                <label class="" for="blue">藍</label>
+                <input class=" border-black border text-black
+                focus:ring-white" id="blue" type="checkbox" value="藍">
+              </div>
+              <div class="flex justify-between py-2">
+                <label class="" for="indigo">靛</label>
+                <input class=" border-black border text-black
+                focus:ring-white" id="indigo" type="checkbox" value="靛">
+              </div>
+              <div class="flex justify-between">
+                <label class="" for="purple">紫</label>
+                <input class=" border-black border text-black
+                focus:ring-white" id="purple" type="checkbox" value="紫">
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="col-span-12 lg:col-span-9">
+        <div class="grid grid-cols-9 gap-6">
+          <div class="col-span-9 pb-1">
+            <div class="flex items-center"><img class="h-8 w-8 mr-2 rounded-full object-cover" src="./assets/images/artist01.jpg" alt="artist picture">
+              <span>Michael</span>
+            </div>
+          </div>
+          <div class="col-span-9 lg:col-span-5">
+           <h2 class="font-bold text-32px mb-2">
+            我家外面的鳥
+           </h2>
+           <p>家門前每天都有不同的小鳥，大多數的小鳥都有特殊能力，特殊能力是什麼我就不說了，希望大家能從作品感受到小鳥的快樂。</p>
+          </div>
+          <div class="col-span-9 lg:col-span-4">
+            <ul class="full flex border border-black bg-white">
+              <li class="w-1/4 flex flex-col items-center border-r border-black 
+              relative z-0
+              before:absolute before:bg-white before:-translate-x-1/2 before:-translate-y-1/2
+              before:h-1/2 before:w-0.5 before:top-1/2 before:-right-0.5 before:z-20
+              "><span>項目</span> <span>6.4 k</span></li>
+              <li class="w-1/4 flex flex-col items-center border-r border-black
+              relative z-0
+              before:absolute before:bg-white before:-translate-x-1/2 before:-translate-y-1/2
+              before:h-1/2 before:w-0.5 before:top-1/2 before:-right-0.5 before:z-20
+              "><span>擁有者</span> <span>2.5 k</span></li>
+              <li class="w-1/4 flex flex-col items-center border-r border-black
+              relative z-0
+              before:absolute before:bg-white before:-translate-x-1/2 before:-translate-y-1/2
+              before:h-1/2 before:w-0.5 before:top-1/2 before:-right-0.5 before:z-20
+              "><span>底價</span> <span>1.38 k</span></li>
+              <li class="w-1/4 flex flex-col items-center"><span>總額</span> <span>2.8 k</span></li>
+            </ul>
+          </div>
+          <div class="col-span-9 flex justify-end items-center">
+            <a href="" class="bg-white border border-black py-2 px-9.5 flex items-center">
+              <span>最新上架</span>
+              <span class="ml-2 material-symbols-outlined">
+              unfold_more
+              </span>
+            </a>
+          </div>
+          <div class="col-span-9">
+            <div class="filterMasonryGrid">
+              <div class="filter-grid-sizer"></div>
+              <div class="filter-gutter-sizer"></div>
+              <div class="filter-grid-item mb-3">
+                <div class="border-8 border-white relative before:absolute before:bg-black before:w-full before:h-full before:top-0 before:left-0
+                before:opacity-0 before:transition-all before:duration-500 hover:before:opacity-70 group">
+                  <img src="./assets/images/art09.jpg" alt="art picture" class="">
+                  <p class="absolute text-white border border-white h-[calc(100%-32px)] w-[calc(100%-32px)] left-4 top-4 p-4
+                opacity-0 transition-all duration-500 group-hover:opacity-100">
+                    唯一想擁有的人，唯一不可擁有的<br><br>
+                    <img src="./assets/images/ethereum.svg" alt="" class="inline-block w-6 h-6">
+                    <span class="inline-block">300</span>
+                  </p>
+                  <a href="#"
+                    class="btn-more absolute opacity-0 group-hover:opacity-100 bg-white border border-black group self-end py-2 px-12 right-2 bottom-2 lg:right-8 lg:bottom-8">
+                    <div class="triangle-br group-hover:triangle-br-black"></div>
+                    more
+                  </a>
+                </div>
+                <h3 class="text-sm border-b font-bold lg:border-black pt-2 pb-6 lg:py-4">區塊戀-他的私生活</h3>
+              </div>
+              <div class="filter-grid-item mb-3">
+                <div class="border-8 border-white relative before:absolute before:bg-black before:w-full before:h-full before:top-0 before:left-0
+                before:opacity-0 before:transition-all before:duration-500 hover:before:opacity-70 group">
+                  <img src="./assets/images/art10.jpg" alt="art picture" class="">
+                  <p class="absolute text-white border border-white h-[calc(100%-32px)] w-[calc(100%-32px)] left-4 top-4 p-4
+                opacity-0 transition-all duration-500 group-hover:opacity-100">
+                    唯一想擁有的人，唯一不可擁有的<br><br>
+                    <img src="./assets/images/ethereum.svg" alt="" class="inline-block w-6 h-6">
+                    <span class="inline-block">300</span>
+                  </p>
+                  <a href="#"
+                    class="btn-more absolute opacity-0 group-hover:opacity-100 bg-white border border-black group self-end py-2 px-12 right-2 bottom-2 lg:right-8 lg:bottom-8">
+                    <div class="triangle-br group-hover:triangle-br-black"></div>
+                    more
+                  </a>
+                </div>
+                <h3 class="text-sm border-b font-bold lg:border-black pt-2 pb-6 lg:py-4">夏娃的醜聞</h3>
+              </div>
+              <div class="filter-grid-item mb-3">
+                <div class="border-8 border-white relative before:absolute before:bg-black before:w-full before:h-full before:top-0 before:left-0
+                before:opacity-0 before:transition-all before:duration-500 hover:before:opacity-70 group">
+                  <img src="./assets/images/art02.jpg" alt="art picture" class="">
+                  <p class="absolute text-white border border-white h-[calc(100%-32px)] w-[calc(100%-32px)] left-4 top-4 p-4
+                opacity-0 transition-all duration-500 group-hover:opacity-100">
+                    唯一想擁有的人，唯一不可擁有的<br><br>
+                    <img src="./assets/images/ethereum.svg" alt="" class="inline-block w-6 h-6">
+                    <span class="inline-block">300</span>
+                  </p>
+                  <a href="#"
+                    class="btn-more absolute opacity-0 group-hover:opacity-100 bg-white border border-black group self-end py-2 px-12 right-2 bottom-2 lg:right-8 lg:bottom-8">
+                    <div class="triangle-br group-hover:triangle-br-black"></div>
+                    more
+                  </a>
+                </div>
+                <h3 class="text-sm border-b font-bold lg:border-black pt-2 pb-6 lg:py-4">藍色啤酒海</h3>
+              </div>
+              <div class="filter-grid-item mb-3">
+                <div class="border-8 border-white relative before:absolute before:bg-black before:w-full before:h-full before:top-0 before:left-0
+                before:opacity-0 before:transition-all before:duration-500 hover:before:opacity-70 group">
+                  <img src="./assets/images/art11.jpg" alt="art picture" class="">
+                  <p class="absolute text-white border border-white h-[calc(100%-32px)] w-[calc(100%-32px)] left-4 top-4 p-4
+                opacity-0 transition-all duration-500 group-hover:opacity-100">
+                    唯一想擁有的人，唯一不可擁有的<br><br>
+                    <img src="./assets/images/ethereum.svg" alt="" class="inline-block w-6 h-6">
+                    <span class="inline-block">300</span>
+                  </p>
+                  <a href="#"
+                    class="btn-more absolute opacity-0 group-hover:opacity-100 bg-white border border-black group self-end py-2 px-12 right-2 bottom-2 lg:right-8 lg:bottom-8">
+                    <div class="triangle-br group-hover:triangle-br-black"></div>
+                    more
+                  </a>
+                </div>
+                <h3 class="text-sm border-b font-bold lg:border-black pt-2 pb-6 lg:py-4">沒有人愛我</h3>
+              </div>
+              <div class="filter-grid-item mb-3">
+                <div class="border-8 border-white relative before:absolute before:bg-black before:w-full before:h-full before:top-0 before:left-0
+                before:opacity-0 before:transition-all before:duration-500 hover:before:opacity-70 group">
+                  <img src="./assets/images/art12.jpg" alt="art picture" class="">
+                  <p class="absolute text-white border border-white h-[calc(100%-32px)] w-[calc(100%-32px)] left-4 top-4 p-4
+                opacity-0 transition-all duration-500 group-hover:opacity-100">
+                    唯一想擁有的人，唯一不可擁有的<br><br>
+                    <img src="./assets/images/ethereum.svg" alt="" class="inline-block w-6 h-6">
+                    <span class="inline-block">300</span>
+                  </p>
+                  <a href="#"
+                    class="btn-more absolute opacity-0 group-hover:opacity-100 bg-white border border-black group self-end py-2 px-12 right-2 bottom-2 lg:right-8 lg:bottom-8">
+                    <div class="triangle-br group-hover:triangle-br-black"></div>
+                    more
+                  </a>
+                </div>
+                <h3 class="text-sm border-b font-bold lg:border-black pt-2 pb-6 lg:py-4">不哭不哭眼淚是珍珠</h3>
+              </div>
+              <div class="filter-grid-item">
+                <div class="border-8 border-white relative before:absolute before:bg-black before:w-full before:h-full before:top-0 before:left-0
+                before:opacity-0 before:transition-all before:duration-500 hover:before:opacity-70 group">
+                  <img src="./assets/images/art03.jpg" alt="art picture" class="">
+                  <p class="absolute text-white border border-white h-[calc(100%-32px)] w-[calc(100%-32px)] left-4 top-4 p-4
+                opacity-0 transition-all duration-500 group-hover:opacity-100">
+                    唯一想擁有的人，唯一不可擁有的<br><br>
+                    <img src="./assets/images/ethereum.svg" alt="" class="inline-block w-6 h-6">
+                    <span class="inline-block">300</span>
+                  </p>
+                  <a href="#"
+                    class="btn-more absolute opacity-0 group-hover:opacity-100 bg-white border border-black group self-end py-2 px-12 right-2 bottom-2 lg:right-8 lg:bottom-8">
+                    <div class="triangle-br group-hover:triangle-br-black"></div>
+                    more
+                  </a>
+                </div>
+                <h3 class="text-sm border-b font-bold lg:border-black pt-2 pb-6 lg:py-4">十分鐘就到</h3>
+              </div>
+              <div class="filter-grid-item mb-3">
+                <div class="border-8 border-white relative before:absolute before:bg-black before:w-full before:h-full before:top-0 before:left-0
+                before:opacity-0 before:transition-all before:duration-500 hover:before:opacity-70 group">
+                  <img src="./assets/images/art04.jpg" alt="art picture" class="">
+                  <p class="absolute text-white border border-white h-[calc(100%-32px)] w-[calc(100%-32px)] left-4 top-4 p-4
+                opacity-0 transition-all duration-500 group-hover:opacity-100">
+                    唯一想擁有的人，唯一不可擁有的<br><br>
+                    <img src="./assets/images/ethereum.svg" alt="" class="inline-block w-6 h-6">
+                    <span class="inline-block">300</span>
+                  </p>
+                  <a href="#"
+                    class="btn-more absolute opacity-0 group-hover:opacity-100 bg-white border border-black group self-end py-2 px-12 right-2 bottom-2 lg:right-8 lg:bottom-8">
+                    <div class="triangle-br group-hover:triangle-br-black"></div>
+                    more
+                  </a>
+                </div>
+                <h3 class="text-sm border-b font-bold lg:border-black pt-2 pb-6 lg:py-4">我這樣有美嗎</h3>
+              </div>
+              <div class="filter-grid-item mb-3">
+                <div class="border-8 border-white relative before:absolute before:bg-black before:w-full before:h-full before:top-0 before:left-0
+                before:opacity-0 before:transition-all before:duration-500 hover:before:opacity-70 group">
+                  <img src="./assets/images/art27.jpg" alt="art picture" class="">
+                  <p class="absolute text-white border border-white h-[calc(100%-32px)] w-[calc(100%-32px)] left-4 top-4 p-4
+                opacity-0 transition-all duration-500 group-hover:opacity-100">
+                    唯一想擁有的人，唯一不可擁有的<br><br>
+                    <img src="./assets/images/ethereum.svg" alt="" class="inline-block w-6 h-6">
+                    <span class="inline-block">300</span>
+                  </p>
+                  <a href="#"
+                    class="btn-more absolute opacity-0 group-hover:opacity-100 bg-white border border-black group self-end py-2 px-12 right-2 bottom-2 lg:right-8 lg:bottom-8">
+                    <div class="triangle-br group-hover:triangle-br-black"></div>
+                    more
+                  </a>
+                </div>
+                <h3 class="text-sm border-b font-bold lg:border-black pt-2 pb-6 lg:py-4">我真的受傷了</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="bg-primary-gray "></div>
