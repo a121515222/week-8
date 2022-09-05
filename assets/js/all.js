@@ -1,5 +1,7 @@
 "use strict";
 
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -20,10 +22,107 @@ var hamburger = document.querySelector('.hamburger');
 var mobileNav = document.querySelector('.js-mobileNav');
 var mobileNavButton = document.querySelector('.js-mobileNavButton');
 
-var NavTabClicks = _toConsumableArray(document.querySelectorAll('.js-NavTabClick'));
+var navTabClicks = _toConsumableArray(document.querySelectorAll('.js-NavTabClick'));
 
-var TabSections = _toConsumableArray(document.querySelectorAll('.js-Section')); // mobil搜尋打開與隱藏logo與hamburger
+var tabSections = _toConsumableArray(document.querySelectorAll('.js-Section'));
 
+var filterClick = _toConsumableArray(document.querySelectorAll('.js-filterClick'));
+
+var filterNum = document.querySelector('.js-filterNum');
+
+var jsInput = _toConsumableArray(document.querySelectorAll('input'));
+
+var filterOpener = document.querySelector('.js-showFilterOpener');
+var filter = document.querySelector('.js-filter');
+var filterCloser = document.querySelector('.js-showFilterCloser');
+var select = document.querySelector('select');
+var countfilter = 0;
+var filterData = {
+  net: [],
+  status: [],
+  price: {
+    typeOfPrice: '',
+    minPrice: 0,
+    maxPrice: 0
+  },
+  typeOfBird: [],
+  flower: '',
+  birdColor: []
+}; // 手機板filter顯示開關
+
+filterOpener.addEventListener('click', function () {
+  filter.classList.toggle('\!left-0');
+});
+filterCloser.addEventListener('click', function () {
+  filter.classList.toggle('\!left-0');
+}); //
+
+function filterCounter() {
+  // 寫入input資料到filterData內
+  countfilter = 0;
+  filterData.net = [];
+  filterData.status = [];
+  filterData.price.typeOfPrice = '';
+  filterData.price.minPrice = 0;
+  filterData.price.maxPrice = 0;
+  filterData.typeOfBird = [];
+  filterData.flower = '';
+  filterData.birdColor = [];
+
+  var jsTypeOfNet = _toConsumableArray(document.querySelectorAll('.js-typeNet input[type="checkbox"]:checked'));
+
+  var jsTypeStatus = _toConsumableArray(document.querySelectorAll('.js-typeStatus input[type="checkbox"]:checked'));
+
+  var jsTypeOfPrice = document.querySelector('.js-typePrice');
+  var jsMinPrice = document.querySelector('.js-minPrice');
+  var jsMaxPrice = document.querySelector('.js-maxPrice');
+
+  var jsTypeOfBird = _toConsumableArray(document.querySelectorAll('.js-typeBird input[type="checkbox"]:checked'));
+
+  var jsFlower = document.querySelector('.js-flower input[type="radio"]:checked');
+
+  var jsBirdColor = _toConsumableArray(document.querySelectorAll('.js-birdColor input[type="checkbox"]:checked'));
+
+  var selectOptionIndex = jsTypeOfPrice.selectedIndex;
+  filterData.price.typeOfPrice = jsTypeOfPrice.options[selectOptionIndex].text;
+  filterData.price.minPrice = jsMinPrice.value;
+  filterData.price.maxPrice = jsMaxPrice.value;
+  jsTypeOfBird.forEach(function (data) {
+    filterData.typeOfBird.push(data.value);
+  });
+  jsTypeOfNet.forEach(function (data) {
+    filterData.net.push(data.value);
+  });
+  jsTypeStatus.forEach(function (data) {
+    filterData.status.push(data.value);
+  });
+  filterData.flower = (jsFlower === null || jsFlower === void 0 ? void 0 : jsFlower.value) === undefined ? '' : jsFlower.value;
+  jsBirdColor.forEach(function (data) {
+    filterData.birdColor.push(data.value);
+  });
+  findAll(filterData);
+  filterNum.textContent = countfilter;
+} // 遞迴 計算filterData有多少資料
+
+
+function findAll(obj) {
+  var keys = Object.keys(obj);
+  keys.forEach(function (key) {
+    if (_typeof(obj[key]) !== "object" && obj[key] !== '' && obj[key] !== 0) {
+      countfilter += 1;
+    } else if (obj[key] instanceof Array === true && obj[key].length >= 1) {
+      countfilter += 1;
+    } else {
+      return findAll(obj[key]);
+    }
+  });
+}
+
+jsInput.forEach(function (input) {
+  input.addEventListener('click', filterCounter);
+  input.addEventListener('change', filterCounter);
+});
+select.addEventListener('change', filterCounter); // mobil搜尋打開與隱藏logo與hamburger
 
 function openSearch() {
   mobileNav.classList.toggle('w-full');
@@ -47,7 +146,7 @@ function buttonStyleChange(event, el) {
   var index = null;
 
   if (event) {
-    NavTabClicks.forEach(function (item) {
+    navTabClicks.forEach(function (item) {
       item.classList.remove('buttonActive');
     });
     el.classList.add('buttonActive');
@@ -58,7 +157,7 @@ function buttonStyleChange(event, el) {
 }
 
 function pageSwitch(parIndex) {
-  TabSections.forEach(function (page) {
+  tabSections.forEach(function (page) {
     page.classList.add('hidden');
     console.log('par', parIndex);
 
@@ -68,11 +167,18 @@ function pageSwitch(parIndex) {
   });
 }
 
-NavTabClicks.forEach(function (button) {
+navTabClicks.forEach(function (button) {
   button.addEventListener('click', function (e) {
     var index = buttonStyleChange(e, button);
     console.log('index', index);
     pageSwitch(index);
+  });
+}); // filter頁filter開關
+
+filterClick.forEach(function (click) {
+  click.addEventListener('click', function () {
+    this.classList.toggle('rotate-180');
+    this.parentNode.parentNode.lastChild.previousSibling.classList.toggle('\!h-0');
   });
 }); // swiper
 
@@ -111,11 +217,37 @@ if (grid) {
     gutter: '.gutter-sizer',
     percentPosition: true
   });
-  imagesLoaded(grid).on('progress', function () {
+  imagesLoaded(grid).on(function () {
     // layout Masonry after each image loads
     msnry.layout();
   });
 }
+
+var filterGrid = document.querySelector('.filterMasonryGrid');
+
+if (filterGrid) {
+  var _msnry = new Masonry(filterGrid, {
+    itemSelector: '.filter-grid-item',
+    columnWidth: '.filter-grid-sizer',
+    gutter: '.filter-gutter-sizer',
+    percentPosition: true
+  });
+
+  imagesLoaded(filterGrid).on(function () {
+    // layout Masonry after each image loads
+    _msnry.layout();
+  });
+} // if(grid){
+//   var $grid = $(grid).imagesLoaded( function() {
+//     // init Masonry after all images have loaded
+//     $grid.masonry({
+//     itemSelector: '.grid-item',
+//     columnWidth: '.grid-sizer',
+//     gutter:'.gutter-sizer',
+//     percentPosition: true
+//     });
+//   });
+// }
 "use strict";
 
 /******/
