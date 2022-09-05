@@ -30,13 +30,14 @@ const filterData = {
 
 // 手機板filter顯示開關
 
-filterOpener.addEventListener('click', () => {
-  filter.classList.toggle('\!left-0')
-})
-filterCloser.addEventListener('click', () => {
-  filter.classList.toggle('\!left-0')
-})
-
+if(filterOpener){
+  filterOpener.addEventListener('click', () => {
+    filter.classList.toggle('\!left-0')
+  })
+  filterCloser.addEventListener('click', () => {
+    filter.classList.toggle('\!left-0')
+  })
+}
 
 //
 
@@ -96,12 +97,18 @@ function findAll(obj) {
     }
   })
 }
+if(jsInput){
+  jsInput.forEach((input) => {
+    input.addEventListener('click', filterCounter)
+    input.addEventListener('change', filterCounter)
+  })
+}
 
-jsInput.forEach((input) => {
-  input.addEventListener('click', filterCounter)
-  input.addEventListener('change', filterCounter)
-})
-select.addEventListener('change', filterCounter)
+if(select){
+  select.addEventListener('change', filterCounter)
+}
+
+
 // mobil搜尋打開與隱藏logo與hamburger
 function openSearch() {
   mobileNav.classList.toggle('w-full')
@@ -142,23 +149,28 @@ function pageSwitch(parIndex) {
   })
 }
 
-
-navTabClicks.forEach((button) => {
-  button.addEventListener('click', function (e) {
-    const index = buttonStyleChange(e, button)
-    console.log('index', index)
-    pageSwitch(index)
+if(navTabClicks){
+  navTabClicks.forEach((button) => {
+    button.addEventListener('click', function (e) {
+      const index = buttonStyleChange(e, button)
+      console.log('index', index)
+      pageSwitch(index)
+    })
   })
-})
+}
+
 
 // filter頁filter開關
 
-filterClick.forEach((click) => {
-  click.addEventListener('click', function () {
-    this.classList.toggle('rotate-180')
-    this.parentNode.parentNode.lastChild.previousSibling.classList.toggle('\!h-0')
+if(filterClick){
+  filterClick.forEach((click) => {
+    click.addEventListener('click', function () {
+      this.classList.toggle('rotate-180')
+      this.parentNode.parentNode.lastChild.previousSibling.classList.toggle('\!h-0')
+    })
   })
-})
+}
+
 
 // swiper
 const swiperEl = document.querySelector('.swiper');
